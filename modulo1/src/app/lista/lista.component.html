@@ -1,0 +1,28 @@
+<div class="col-md-12 text-center m-5">
+    <p class="h1">{{titulo}}</p>
+</div>
+
+
+<div class="row">
+    <div class="d-flex align-items-center justify-content-center">
+        <div class="col-md-8 m-5">
+            <ul class="list-group" *ngFor="let item of peliculas">
+                <li class="list-group-item">{{item}}</li>
+            </ul>    
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="d-flex align-items-center justify-content-center">
+        <div class="col-md-4">
+            <form #formulario="ngForm" (ngSubmit)="agregarPelicula(formulario)">
+                <div class="form-group">
+                    <label for="inputPelicula">Ingresa una nueva pelicula</label>
+                    <input type="text" class="form-control" id="inputPelicula" name="inputPelicula" ngModel>
+                    <button type="submit" class="btn btn-primary m-3">Agregar pelicula</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
