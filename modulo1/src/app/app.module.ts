@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListaComponent } from './lista/lista.component';
 import { FormsModule } from "@angular/forms";
+import { ListaPeliculasFavoritasComponent } from './lista-peliculas-favoritas/lista-peliculas-favoritas.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaComponent
+    ListaComponent,
+    ListaPeliculasFavoritasComponent
   ],
   imports: [
     BrowserModule,
