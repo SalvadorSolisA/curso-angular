@@ -1,1 +1,45 @@
-<p>lista-peliculas-favoritas works!</p>
+<!--Formulario-->
+<div class="row mb-5">
+    <div class="d-flex align-items-center justify-content-center">
+        <!--Modal-->
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#formulario"
+            (click)="abrirModal()">
+            Agregar a favoritos
+            <i class="bi bi-star"></i>
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="card m-1" style="width: 18rem;" *ngFor="let item of listPeliculasFvoritas">
+        <img class="card-img-top" src="assets/img/cine.png" alt="cine" >
+        <div class="card-body">
+            <h5 class="card-title">{{item.getTitulo()}}</h5>
+            <p class="card-text"><span>Director: </span>{{item.getDirector()}}</p>
+            <p class="card-text"><small class="text-muted"><span>Año de estreno: </span>{{item.getAnio()}}</small></p>
+            <button class="btn" (click)="up(1)"><i class="bi bi-hand-thumbs-up-fill"></i></button>
+            <button class="btn" (click)="down(2)"><i class="bi bi-hand-thumbs-down-fill"></i></button>
+            <button type="button" class="btn btn-dark" (click)="verDetalle(item)">Ver detalles</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="formulario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar a favoritos</h5>
+                <button type="button" class="btn" data-dismiss="modal" aria-label="Close" (click)="cerrarModal()">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <app-formulario (peliculaCreada)="agregarPelicula($event)"></app-formulario>
+            </div>
+        </div>
+    </div>
+</div>

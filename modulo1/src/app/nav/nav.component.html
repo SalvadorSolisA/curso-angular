@@ -1,0 +1,20 @@
+<div class="container">
+    <button class="nav-button" aria-controls="nav" aria-expanded="false" aria-label="Menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </button>
+</div>
+
+<script>
+    const navButton = document.querySelector('nav-button');
+    navButton.addEventListener('click',() =>{
+        const visibility = navButton.getAttribute('aria-expanded');
+
+        if (visibility == 'false') {
+            navButton.setAttribute('aria-expanded', true);
+        }else{
+            navButton.setAttribute('aria-expanded', false);
+        }
+    }); 
+</script>

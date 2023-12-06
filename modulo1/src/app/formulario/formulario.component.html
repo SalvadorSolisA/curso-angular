@@ -1,0 +1,34 @@
+<div class="text-center m-3">
+    <p class="">{{titulo}}</p>
+</div>
+
+<div class="row">
+    <div class="d-flex align-items-center justify-content-center">
+        <div class="m-5">
+            <form [formGroup]="fg" (submit)="crearPelicula()">
+                <div class="form-group">
+                    <label for="inputTitulo">Ingresa el titulo de la pelicula<span class="font-weight-bold">*</span></label>
+                    <input type="text" class="form-control" id="inputPelicula" formControlName="inputTitulo">
+                    <span class="text-danger" *ngIf="fg.controls['inputTitulo'].hasError('required')">El campo es obligatorio</span>
+                    <ul>
+                        <li *ngFor="let r of searchResult">{{r}}</li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <label for="inputDirector">Ingresa el nombre del director<span class="font-weight-bold">*</span></label>
+                    <input type="text" class="form-control" id="inputDirector" formControlName="inputDirector">
+                    <span class="text-danger" *ngIf="fg.controls['inputDirector'].hasError('required')">El campo es obligatorio</span>
+                </div>
+                <div class="form-group">
+                    <label for="inputAnio">Ingresa el año de estreno<span class="font-weight-bold">*</span></label>
+                    <input type="number" class="form-control" id="inputAnio" formControlName="inputAnio">
+                    <span class="text-danger" *ngIf="fg.controls['inputAnio'].hasError('required')">El campo es obligatorio</span>
+                </div>
+                <div class="form-group mt-2">
+                    <button type="submit" class="btn btn-dark">Agregar pelicula <i class="bi bi-star-fill"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

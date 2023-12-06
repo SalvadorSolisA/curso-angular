@@ -1,12 +1,12 @@
 export class Pelicula{
     private titulo: string;
     private director: string;
-    private año: number;
+    private anio: number;
 
-    constructor(titulo: string, director: string, año: number){
+    constructor(titulo: string, director: string, anio: number){
         this.titulo = titulo;
         this.director = director;
-        this.año = año;
+        this.anio = anio;
     }
 
     getTitulo(): string{
@@ -17,7 +17,7 @@ export class Pelicula{
         return this.director;
     }
 
-    getAño(): number{
-        return this.año;
+    getAnio(): number{
+        return this.anio;
     }
 }
