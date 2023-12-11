@@ -12,6 +12,7 @@ import { ListaPeliculasFavoritasComponent } from './components/lista-peliculas-f
 import { CatalogoPeliculasComponent } from './components/catalogo-peliculas/catalogo-peliculas.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProtectedComponent } from './components/protected/protected/protected.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ListaPeliculasFavoritasComponent,
     CatalogoPeliculasComponent,
     HomeComponent,
-    NavComponent
+    NavComponent,
+    ProtectedComponent
   ],
   imports: [
     BrowserModule,
