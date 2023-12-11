@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormularioComponent } from './formulario/formulario.component';
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { ListaPeliculasFavoritasComponent } from './lista-peliculas-favoritas/lista-peliculas-favoritas.component';
-import { CatalogoPeliculasComponent } from './catalogo-peliculas/catalogo-peliculas.component';
-import { HomeComponent } from './home/home.component';
 import { PeliculasApiClient } from './service/PeliculasApiClient';
-import { NavComponent } from './nav/nav.component';
+import { NavComponent } from './components/nav/nav.component';
 import { StoreModule } from '@ngrx/store';
 import { ROOT_REDUCER } from './state/app.state';
+import { FormularioComponent } from './components/formulario/formulario.component';
+import { ListaPeliculasFavoritasComponent } from './components/lista-peliculas-favoritas/lista-peliculas-favoritas.component';
+import { CatalogoPeliculasComponent } from './components/catalogo-peliculas/catalogo-peliculas.component';
+import { HomeComponent } from './components/home/home.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({

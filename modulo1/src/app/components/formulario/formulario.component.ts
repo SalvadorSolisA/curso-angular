@@ -1,10 +1,10 @@
 import { Component, EventEmitter, HostBinding, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Pelicula } from '../model/pelicula';
 import { Router } from '@angular/router';
 import { fromEvent } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map, switchMap,  } from 'rxjs/operators';
 import { ajax } from 'jquery';
+import { Pelicula } from 'src/app/model/pelicula';
 
 declare var $: any;
 

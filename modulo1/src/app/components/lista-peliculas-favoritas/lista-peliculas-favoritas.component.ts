@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Pelicula } from '../model/pelicula';
-import { PeliculasApiClient } from '../service/PeliculasApiClient';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { decrementVote, incrementVote } from '../state/actions/votes.actions';
+import { Pelicula } from 'src/app/model/pelicula';
+import { PeliculasApiClient } from 'src/app/service/PeliculasApiClient';
+import { decrementVote, incrementVote } from 'src/app/state/actions/votes.actions';
 
 declare var $: any;
 
