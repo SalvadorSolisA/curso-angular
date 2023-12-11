@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { PeliculasApiClient } from './service/PeliculasApiClient';
 import { NavComponent } from './nav/nav.component';
 import { StoreModule } from '@ngrx/store';
+import { ROOT_REDUCER } from './state/app.state';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { StoreModule } from '@ngrx/store';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({})
+    StoreModule.forRoot( ROOT_REDUCER ),//toma el valor que se exporto de AppState.ts
   ],
   providers: [ PeliculasApiClient ],
   bootstrap: [AppComponent],

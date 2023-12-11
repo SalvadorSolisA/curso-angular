@@ -6,6 +6,8 @@ import { fromEvent } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map, switchMap,  } from 'rxjs/operators';
 import { ajax } from 'jquery';
 
+declare var $: any;
+
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
@@ -65,7 +67,7 @@ export class FormularioComponent implements OnInit{
       this.peliculaCreada.emit(newPeliculaFormulario);
       console.log('Evento emitido desde el componente formulario');
       console.log(newPeliculaFormulario);
-      //this._router.navigateByUrl('/home');
+      $('#formulario').modal('hide');
     }else{
       console.error('no se pudo agregar a la lista');
     }

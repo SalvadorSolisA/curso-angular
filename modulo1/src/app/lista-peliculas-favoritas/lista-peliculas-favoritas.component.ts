@@ -3,7 +3,7 @@ import { Pelicula } from '../model/pelicula';
 import { PeliculasApiClient } from '../service/PeliculasApiClient';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Item, VotesState, decrementVote, incrementVote } from '../model/votes-state';
+import { decrementVote, incrementVote } from '../state/actions/votes.actions';
 
 declare var $: any;
 
@@ -15,19 +15,15 @@ declare var $: any;
 export class ListaPeliculasFavoritasComponent implements OnInit{
   
   public listPeliculasFvoritas: Pelicula[];
-  items: Item[];
+  //items: Item[];
   
   //modal
   public showDialogFavoriteSelect: boolean;
 
   constructor(private _catalogo: PeliculasApiClient, 
     private _router: Router,
-
-    private _store: Store<{ votes: VotesState }>){
-      this._store.select('votes').subscribe((state) => {
-        this.items = state.items
-      });
-    }
+    public store: Store<any>,
+  ){}
 
   ngOnInit(): void {
     this.listPeliculasFvoritas = this._catalogo.getListaPeliculasFav();
@@ -53,11 +49,10 @@ export class ListaPeliculasFavoritasComponent implements OnInit{
 
 
   public up(itemId: number){
-    //let itemId = 1;
-    this._store.dispatch(incrementVote(itemId));
+    this.store.dispatch(incrementVote(1));
   }
 
   public down(itemId: number){
-    this._store.dispatch(decrementVote(itemId));
+    this.store.dispatch(decrementVote(2));
   }
 }
