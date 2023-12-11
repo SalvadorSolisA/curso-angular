@@ -13,6 +13,7 @@ import { CatalogoPeliculasComponent } from './components/catalogo-peliculas/cata
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProtectedComponent } from './components/protected/protected/protected.component';
+import { LoginComponent } from './components/login/login/login.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ProtectedComponent } from './components/protected/protected/protected.c
     CatalogoPeliculasComponent,
     HomeComponent,
     NavComponent,
-    ProtectedComponent
+    ProtectedComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
